@@ -1,0 +1,53 @@
+---
+title: "math-research"
+author: "Kate Royce"
+date: "9/22/2017"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitcitations)
+cite_options(citation_format = 'pandoc')
+P <- rprojroot::find_rstudio_root_file
+```
+
+#Introduction
+
+The paper https://www.researchgate.net/publication/276249503_Modeling_seasonality_in_avian_influenza_H5N1 has chaos (refs 38-41, section 6)! Chaotic behavior arises in a seasonally forced SI model when 
+
+###Implementing in R
+
+The packages tseriesChaos and TISEAN might help. ((1)[https://cran.r-project.org/web/packages/tseriesChaos/tseriesChaos.pdf], 2 `r citep (10.1063/1.166424)`)
+
+### Time series
+
+A good introduction `r citep('10.1093/ije/dyt092')` has information about common time series tests in epidemiology, as well as sample code for the analyses they suggest.
+
+- Time series: a sequence of data points recorded at regular time intervals. Units are of time, such as days, and underlying population size doesn't matter because it won't change on a short timescale.
+
+- Short timescales are more likely to illuminate causal relationships because they exclude systematic patterns (such as seasons)
+
+### Chaos
+
+The avian influenza paper `r citep('10.1016/j.mbs.2013.09.001')` hints at chaos.
+
+This introductory paper `r citep('10.1088/0143-0807/26/1/021')` explains how to find chaos in time series. Also check out `r citep('10.1088/0143-0807/26/4/003')`
+
+[This journal](http://www.cmsim.eu/) is all about chaotic modelling! (Note: this is probably also what edgy fashionistas have as their Twitter bio)
+
+For some reasons my predecessors in Math 53 have written the first [search result](https://math.dartmouth.edu/archive/m53f09/public_html/proj/Jon_writeup.pdf) that comes up when one googles "chaos epidemiology".
+
+Dartmouth strikes again with Lorenz's paper `r citep('10.1175/jas3430.1')` on how to create chaotic models.
+
+
+And finally, it's funny that one of the foundational papers `r citep('10.2307/2318254')` dismisses epidemiology on the first page.
+
+```{r, include=FALSE}
+write.bibtex(file = P("references.bib"))
+```
+
+## References
+
+<div id="refs"></div>
